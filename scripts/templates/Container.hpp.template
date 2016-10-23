@@ -1,0 +1,14 @@
+#ifndef <%= TheName.upcase %>_HPP_
+#define <%= TheName.upcase %>_HPP_
+
+#include <touchgfx/containers/Container.hpp>
+
+class <%= TheName %> : public touchgfx::Container
+{
+public:
+    <%= TheName %>();
+    ~<%= TheName %>();
+private:
+};
+
+#endif /* <%= TheName.upcase %>_HPP_ */

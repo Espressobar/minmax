@@ -37,6 +37,12 @@
     <Filter Include="Source Files\splash_screen">
       <UniqueIdentifier>{D3874068-32E3-4834-AE3A-3F96D42123EF}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\idle_screen">
+      <UniqueIdentifier>{dfce845f-d81a-427e-be2e-445cbf7b3b92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\idle_screen">
+      <UniqueIdentifier>{16b5319c-96f0-4267-8565-62596355f82e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\gui\src\common\FrontendApplication.cpp">
@@ -53,6 +59,15 @@
     </ClCompile>
     <ClCompile Include="..\..\gui\src\splash_screen\SplashView.cpp">
       <Filter>Source Files\splash_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\idle_screen\IdlePresenter.cpp">
+      <Filter>Source Files\idle_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\idle_screen\IdleView.cpp">
+      <Filter>Source Files\idle_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\common\BasePresenter.cpp">
+      <Filter>Source Files\common</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -84,6 +99,21 @@
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\splash_screen\SplashView.hpp">
       <Filter>Header Files\splash_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\idle_screen\IdlePresenter.hpp">
+      <Filter>Header Files\idle_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\idle_screen\IdleView.hpp">
+      <Filter>Header Files\idle_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\BasePresenter.hpp">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\BaseView.hpp">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\BaseViewInterface.hpp">
+      <Filter>Header Files\common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,18 @@
+#include <gui/<%= SUB %>/<%= the_name %>_screen/<%= TheName %>Presenter.hpp>
+#include <gui/<%= SUB %>/<%= the_name %>_screen/<%= TheName %>View.hpp>
+#include <gui/common/FrontendApplication.hpp>
+
+<%= TheName %>Presenter::<%= TheName %>Presenter(<%= TheName %>View& v)
+    : BasePresenter(v), view(v)
+{
+}
+
+void <%= TheName %>Presenter::activate()
+{
+  
+}
+
+void <%= TheName %>Presenter::deactivate()
+{
+
+}

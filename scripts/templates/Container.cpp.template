@@ -1,0 +1,10 @@
+#include <gui/<%= the_screen %>/<%= TheName %>.hpp>
+
+<%= TheName %>::<%= TheName %>()
+    : touchgfx::Container()
+{
+}
+
+<%= TheName %>::~<%= TheName %>()
+{
+}

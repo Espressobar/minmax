@@ -11,7 +11,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\gui\src\common\BasePresenter.cpp" />
     <ClCompile Include="..\..\gui\src\common\FrontendApplication.cpp" />
+    <ClCompile Include="..\..\gui\src\idle_screen\IdlePresenter.cpp" />
+    <ClCompile Include="..\..\gui\src\idle_screen\IdleView.cpp" />
     <ClCompile Include="..\..\gui\src\model\Model.cpp" />
     <ClCompile Include="..\..\gui\src\splash_screen\SplashView.cpp" />
     <ClCompile Include="..\..\gui\src\splash_screen\SplashPresenter.cpp" />
@@ -22,7 +25,12 @@
     <None Include="..\..\config\msvs\Application.props" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\gui\include\gui\common\BasePresenter.hpp" />
+    <ClInclude Include="..\..\gui\include\gui\common\BaseView.hpp" />
+    <ClInclude Include="..\..\gui\include\gui\common\BaseViewInterface.hpp" />
     <ClInclude Include="..\..\gui\include\gui\common\FrontendApplication.hpp" />
+    <ClInclude Include="..\..\gui\include\gui\idle_screen\IdlePresenter.hpp" />
+    <ClInclude Include="..\..\gui\include\gui\idle_screen\IdleView.hpp" />
     <ClInclude Include="..\..\gui\include\gui\common\FrontendHeap.hpp" />
     <ClInclude Include="..\..\gui\include\gui\common\Util.hpp" />
     <ClInclude Include="..\..\gui\include\gui\model\Model.hpp" />

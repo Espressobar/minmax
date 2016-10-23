@@ -1,0 +1,21 @@
+#ifndef <%= TheName.upcase %>_PRESENTER_HPP
+#define <%= TheName.upcase %>_PRESENTER_HPP
+
+#include <gui/common/BasePresenter.hpp>
+
+class <%= TheName %>View;
+
+class <%= TheName %>Presenter : public BasePresenter
+{
+public:
+    <%= TheName %>Presenter(<%= TheName %>View& v);
+    virtual void activate();
+    virtual void deactivate();
+    virtual ~<%= TheName %>Presenter() {};
+private:
+    <%= TheName %>Presenter();
+
+    <%= TheName %>View& view;
+};
+
+#endif

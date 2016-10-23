@@ -23,8 +23,8 @@ end
 
 name = ARGV.shift
 
-PATH = '../'
-IDE_PATH = '../'
+PATH = '../gui'
+IDE_PATH = '../gui/simulator/msvs'
 WINDOWS_LINE_ENDINGS = "\n"
 UNIX_LINE_ENDINGS = "\n"
 SUB = ARGV.shift

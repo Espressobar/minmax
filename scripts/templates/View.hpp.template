@@ -1,0 +1,16 @@
+#ifndef <%= TheName.upcase %>_VIEW_HPP
+#define <%= TheName.upcase %>_VIEW_HPP
+
+#include <gui/common/BaseView.hpp>
+#include <gui/<%= the_name %>_screen/<%= TheName %>Presenter.hpp>
+
+class <%= TheName %>View : public BaseView<<%= TheName %>Presenter>
+{
+public:
+    <%= TheName %>View();
+    virtual ~<%= TheName %>View();
+    virtual void setupScreen();
+    virtual void tearDownScreen();
+};
+
+#endif
