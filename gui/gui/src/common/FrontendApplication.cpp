@@ -1,5 +1,7 @@
 #include <new>
 #include <gui/common/FrontendApplication.hpp>
+#include <gui/idle_screen/IdleView.hpp>
+#include <gui/idle_screen/IdlePresenter.hpp>
 #include <mvp/View.hpp>
 #include <touchgfx/lcd/LCD.hpp>
 #include <touchgfx/hal/HAL.hpp>
@@ -30,3 +32,13 @@ void FrontendApplication::gotoTemplateScreenImpl()
     makeTransition< SplashView, SplashPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
+void FrontendApplication::gotoIdle()
+{ 
+    transitionCallback = Callback< FrontendApplication >(this, &FrontendApplication::gotoIdleImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplication::gotoIdleImpl()
+{
+    makeTransition< IdleView, IdlePresenter, NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}

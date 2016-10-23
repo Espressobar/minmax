@@ -22,6 +22,7 @@ class FrontendHeap;
 class FrontendApplication : public MVPApplication
 {
 public:
+    void gotoIdle();
     FrontendApplication(Model& m, FrontendHeap& heap);
     virtual ~FrontendApplication() { }
 
@@ -45,6 +46,7 @@ public:
         MVPApplication::handleTickEvent();
     }
 private:
+    void gotoIdleImpl();
     Callback<FrontendApplication> transitionCallback;
     FrontendHeap& frontendHeap;
     Model& model;

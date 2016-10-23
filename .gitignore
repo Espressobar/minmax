@@ -28,7 +28,20 @@
 *.out
 *.app
 
+# Visual studio / Keil / gcc
+.vs/
+Debug/
+Flash/
+build/
+*.sdf
+*.db
+ipch/
+Listings/
+*.suo
+*.opendb
 
 ######## Touchgfx ########
-Flash/
 touchgfx-release-*
+
+
+

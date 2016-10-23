@@ -6,6 +6,8 @@
 #include <mvp/MVPHeap.hpp>
 #include <touchgfx/transitions/NoTransition.hpp>
 #include <gui/common/FrontendApplication.hpp>
+#include <gui/idle_screen/IdleView.hpp>
+#include <gui/idle_screen/IdlePresenter.hpp>
 #include <gui/model/Model.hpp>
 #include <gui/splash_screen/SplashView.hpp>
 #include <gui/splash_screen/SplashPresenter.hpp>
@@ -31,8 +33,9 @@ public:
      * @note All view types used in the application MUST be added to this list!
      */
     typedef meta::TypeList< SplashView,
-            meta::Nil
-            > ViewTypes;
+            meta::TypeList< IdleView,
+            meta::Nil 
+            > > ViewTypes;
 
     /**
      * Determine (compile time) the View type of largest size.
@@ -44,8 +47,9 @@ public:
      * @note All presenter types used in the application MUST be added to this list!
      */
     typedef meta::TypeList< SplashPresenter,
-            meta::Nil
-            > PresenterTypes;
+            meta::TypeList< IdlePresenter,
+            meta::Nil 
+            > > PresenterTypes;
 
     /**
      * Determine (compile time) the Presenter type of largest size.

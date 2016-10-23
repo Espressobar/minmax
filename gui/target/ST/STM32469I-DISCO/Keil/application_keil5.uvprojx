@@ -403,14 +403,29 @@
               <FilePath>..\..\..\..\gui\src\model\Model.cpp</FilePath>
             </File>
             <File>
-              <FileName>Splash.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>..\..\..\..\gui\src\splash_screen\Splash.cpp</FilePath>
-            </File>
-            <File>
               <FileName>SplashPresenter.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>..\..\..\..\gui\src\splash_screen\SplashPresenter.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>IdlePresenter.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\..\..\..\gui\src\idle_screen\IdlePresenter.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>IdleView.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\..\..\..\gui\src\idle_screen\IdleView.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>SplashView.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\..\..\..\gui\src\splash_screen\SplashView.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>BasePresenter.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\..\..\..\gui\src\common\BasePresenter.cpp</FilePath>
             </File>
           </Files>
         </Group>

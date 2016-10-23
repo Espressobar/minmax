@@ -11,6 +11,7 @@ extern "C"
 #include "bsp_ngdf_conf.h"
 }
 #endif
+#include "gui/common/defines.hpp"
 
 Model::Model() : modelListener(0)
 {
@@ -23,12 +24,37 @@ void Model::tick()
 }
 
 
+void Model::resetTimers()
+{
+    //reset timers when press has been received from frontendaplication
+}
+
 void Model::send()
 {
-	//initialize - test
-	ControlMessageInitialize initMsg;
+  ControlMessage initMsg;
   initMsg.messageCode = INITIALIZE;
   sendMessage(&initMsg, sizeof(initMsg));	
+
+  ControlMessage executeMsg;
+  executeMsg.messageCode = EXECUTE_RECIPE;
+  sendMessage(&executeMsg, sizeof(executeMsg));
+
+  //recipe Mgcl2 + caco3
+  ControlMessageDose doseMsg;
+  doseMsg.messageCode = DOSE;
+  doseMsg.ml = 5;
+	
+  //mgcl2
+  doseMsg.mineral = MGCL2;
+  sendMessage(&doseMsg, sizeof(doseMsg));
+
+  //caco3
+  doseMsg.mineral = CACO3;
+  sendMessage(&doseMsg, sizeof(doseMsg));
+	
+	ControlMessage eom;
+	eom.messageCode = END_OF_MSG;
+	sendMessage(&doseMsg, sizeof(doseMsg));
 }
 
 void Model::handleIncomingMessages()
@@ -59,6 +85,11 @@ void Model::handleMessage(ControlMessageCode code, void* message)
 		case UPDATE_CONFIGURATION:
 			break;
 	};
+}
+
+void Model::setSelectedScreen(SubScreen subScreen)
+{
+    selectedScreen = subScreen;
 }
 
 void Model::sendMessage(void* message, uint16_t length)

@@ -4,49 +4,53 @@
 #ifndef __CONTROLMESSAGES_H__
 #define __CONTROLMESSAGES_H__
 
-#define INPUT_SIZE 30
+#include <touchgfx/hal/Types.hpp>
 
-enum ControlMessages
+enum ControlMessageCode
 {
-  
-  //STM32 TO ARDUINO
-  EXECUTE_RECIPE 	= 65,
-  CONFIGURE     	= 66,
+    //STM32 TO ARDUINO
 
-  //ARDUINO TO STM32
-  INITIALIZE 		= 97,
+    //Start messages
+    EXECUTE_RECIPE          = 65, //Should be followed by doses
+    UPDATE_CONFIGURATION    = 66,
+
+    //payload messages
+    DOSE            = 80,
+
+    //ARDUINO TO STM32
+    INITIALIZE = 97, //Configuration, salt - levels, reservoir level.
+    RECIPE_STARTED = 98,
+    DOSING_STARTED = 99,
+    DOSING_FINISHED = 100,
+    RECIPLE_FINISHED = 101,
+    //LEVEL
+
+    END_OF_MSG = 127 /* For messages with payload */
+};
+			
+enum Solution
+{
+	MGSO4 = 0, //GH 100 solution
+    MGCL2,     //GH 100 solution
+    CACL2,     //GH 100 solution
+
+    //CA + HCO3-
+    CACO3,   //GH 100 solution. Molar mass 100 mg/mmol
+
+    //HCO3- + (NA)
+    NAHCO3   //KH 100 solution
 };
 
-//todo we need to configure the sources
-struct ControlMessageStart
+    /* uint8 instead? */
+struct ControlMessage
 {
-	uint16_t controlMessage;
-	uint16_t GH;
-	uint16_t KH;
-	// Something about
+    uint16_t messageCode;
 };
 
-struct ControlMessageInitialize
+struct ControlMessageDose
 {
-	uint16_t controlMessage;
+    uint16_t messageCode; //enum ControlMessageCode
+    uint16_t mineral;     //enum Mineral
+    uint16_t ml;          //amount in ml
 };
-
-// Adjust recipe message
-// Configure stuff
-
-enum Component
-{
-	MG 		= 10,
-	CA 		= 11,
-	HCO3 	= 12	
-};
-
-typedef enum
-{
-	MGSO4 	= 200,
-	MGCL2 	= 201,
-	CACL2 	= 203,
-	CACO3 	= 204,
-} Salt;
-
 #endif /* __CONTROLMESSAGES_H__ */
