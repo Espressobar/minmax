@@ -101,7 +101,7 @@ static uint8_t getChar(void)
     if(hasData())
     {
         index = readcount;
-        readcount = (readcount + 1) % BUFFER_SIZE;
+        readcount = (readcount + 1) % BUFFER_SIZE; //Circular
                 
         //Populate telegram buffer
         telegramBuffer[telegramIndex] = aRxBuffer[index];
