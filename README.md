@@ -9,3 +9,5 @@ If cupping results are undesireable, the system should also help the user make a
 #What this system can do
 
 #What this system can't do
+
+#List of Components
